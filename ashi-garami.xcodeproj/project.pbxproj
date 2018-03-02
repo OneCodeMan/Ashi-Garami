@@ -13,6 +13,7 @@
 		162621EB2048AC740042694E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 162621EA2048AC740042694E /* Assets.xcassets */; };
 		162621EE2048AC740042694E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162621EC2048AC740042694E /* LaunchScreen.storyboard */; };
 		162621F12048AC740042694E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 162621F02048AC740042694E /* main.m */; };
+		4469E38E37CDF72359F88C97 /* libPods-ashi-garami.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 267613E06B3D486932B8AC9C /* libPods-ashi-garami.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		162621ED2048AC740042694E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		162621EF2048AC740042694E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		162621F02048AC740042694E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		267613E06B3D486932B8AC9C /* libPods-ashi-garami.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ashi-garami.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CB1F92230D8F033AA17B1DB /* Pods-ashi-garami.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ashi-garami.release.xcconfig"; path = "Pods/Target Support Files/Pods-ashi-garami/Pods-ashi-garami.release.xcconfig"; sourceTree = "<group>"; };
+		DE977F11DA84A7F76F81EB16 /* Pods-ashi-garami.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ashi-garami.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ashi-garami/Pods-ashi-garami.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4469E38E37CDF72359F88C97 /* libPods-ashi-garami.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05DC0D69350274E370AA3173 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				267613E06B3D486932B8AC9C /* libPods-ashi-garami.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		162621D52048AC740042694E = {
 			isa = PBXGroup;
 			children = (
 				162621E02048AC740042694E /* ashi-garami */,
 				162621DF2048AC740042694E /* Products */,
+				90F4F1795B94484AAFED1842 /* Pods */,
+				05DC0D69350274E370AA3173 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +86,15 @@
 			path = "ashi-garami";
 			sourceTree = "<group>";
 		};
+		90F4F1795B94484AAFED1842 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE977F11DA84A7F76F81EB16 /* Pods-ashi-garami.debug.xcconfig */,
+				9CB1F92230D8F033AA17B1DB /* Pods-ashi-garami.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +102,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 162621F42048AC740042694E /* Build configuration list for PBXNativeTarget "ashi-garami" */;
 			buildPhases = (
+				75B240D04E32A10F98D2158D /* [CP] Check Pods Manifest.lock */,
 				162621DA2048AC740042694E /* Sources */,
 				162621DB2048AC740042694E /* Frameworks */,
 				162621DC2048AC740042694E /* Resources */,
+				04D47C8D2E73E319127768C2 /* [CP] Embed Pods Frameworks */,
+				78148B5D0358882A486C799C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +163,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04D47C8D2E73E319127768C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ashi-garami/Pods-ashi-garami-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75B240D04E32A10F98D2158D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		78148B5D0358882A486C799C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ashi-garami/Pods-ashi-garami-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		162621DA2048AC740042694E /* Sources */ = {
@@ -276,6 +351,7 @@
 		};
 		162621F52048AC740042694E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE977F11DA84A7F76F81EB16 /* Pods-ashi-garami.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,6 +367,7 @@
 		};
 		162621F62048AC740042694E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CB1F92230D8F033AA17B1DB /* Pods-ashi-garami.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
