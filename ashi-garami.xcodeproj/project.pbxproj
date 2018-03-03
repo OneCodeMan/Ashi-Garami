@@ -13,6 +13,8 @@
 		162621EB2048AC740042694E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 162621EA2048AC740042694E /* Assets.xcassets */; };
 		162621EE2048AC740042694E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162621EC2048AC740042694E /* LaunchScreen.storyboard */; };
 		162621F12048AC740042694E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 162621F02048AC740042694E /* main.m */; };
+		16FE2712204AB66900E2B406 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FE2711204AB66900E2B406 /* Coin.m */; };
+		16FE2715204ABE7400E2B406 /* CoinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FE2714204ABE7400E2B406 /* CoinCell.m */; };
 		4469E38E37CDF72359F88C97 /* libPods-ashi-garami.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 267613E06B3D486932B8AC9C /* libPods-ashi-garami.a */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,10 @@
 		162621ED2048AC740042694E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		162621EF2048AC740042694E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		162621F02048AC740042694E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		16FE2710204AB66900E2B406 /* Coin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
+		16FE2711204AB66900E2B406 /* Coin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coin.m; sourceTree = "<group>"; };
+		16FE2713204ABE7400E2B406 /* CoinCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinCell.h; sourceTree = "<group>"; };
+		16FE2714204ABE7400E2B406 /* CoinCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinCell.m; sourceTree = "<group>"; };
 		267613E06B3D486932B8AC9C /* libPods-ashi-garami.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ashi-garami.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB1F92230D8F033AA17B1DB /* Pods-ashi-garami.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ashi-garami.release.xcconfig"; path = "Pods/Target Support Files/Pods-ashi-garami/Pods-ashi-garami.release.xcconfig"; sourceTree = "<group>"; };
 		DE977F11DA84A7F76F81EB16 /* Pods-ashi-garami.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ashi-garami.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ashi-garami/Pods-ashi-garami.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +83,10 @@
 				162621E22048AC740042694E /* AppDelegate.m */,
 				162621E42048AC740042694E /* ViewController.h */,
 				162621E52048AC740042694E /* ViewController.m */,
+				16FE2713204ABE7400E2B406 /* CoinCell.h */,
+				16FE2714204ABE7400E2B406 /* CoinCell.m */,
+				16FE2710204AB66900E2B406 /* Coin.h */,
+				16FE2711204AB66900E2B406 /* Coin.m */,
 				162621E72048AC740042694E /* Main.storyboard */,
 				162621EA2048AC740042694E /* Assets.xcassets */,
 				162621EC2048AC740042694E /* LaunchScreen.storyboard */,
@@ -219,6 +229,8 @@
 			files = (
 				162621E62048AC740042694E /* ViewController.m in Sources */,
 				162621F12048AC740042694E /* main.m in Sources */,
+				16FE2712204AB66900E2B406 /* Coin.m in Sources */,
+				16FE2715204ABE7400E2B406 /* CoinCell.m in Sources */,
 				162621E32048AC740042694E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

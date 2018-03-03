@@ -37,7 +37,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coins" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZY-EU-F2D">
-                                            <rect key="frame" x="10" y="12" width="260" height="36"/>
+                                            <rect key="frame" x="10" y="12" width="315" height="36"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -51,24 +51,24 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoinCell" id="ceE-Xm-fcx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoinCell" id="ceE-Xm-fcx" customClass="CoinCell">
                                         <rect key="frame" x="0.0" y="88" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ceE-Xm-fcx" id="oIc-Tz-u2c">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="332" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJB-GY-8Xa">
-                                                    <rect key="frame" x="15" y="11" width="50.5" height="53"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJB-GY-8Xa">
+                                                    <rect key="frame" x="15" y="11" width="43" height="53"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="8Oj-Bh-Cg2"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="8Oj-Bh-Cg2"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XRP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsg-dD-tNz">
-                                                    <rect key="frame" x="80.5" y="11" width="150" height="29.5"/>
+                                                    <rect key="frame" x="66" y="11" width="150" height="29.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="8Wb-de-7jB"/>
                                                     </constraints>
@@ -77,7 +77,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stellar Lumens" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0i-yn-bVp">
-                                                    <rect key="frame" x="73.5" y="45.5" width="150" height="16.5"/>
+                                                    <rect key="frame" x="66" y="45.5" width="150" height="16.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="mGO-wB-3N2"/>
                                                     </constraints>
@@ -117,13 +117,20 @@
                                                 <constraint firstItem="rOR-PG-IYE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nsg-dD-tNz" secondAttribute="trailing" constant="20" id="PFB-Dy-gm6"/>
                                                 <constraint firstItem="Nsg-dD-tNz" firstAttribute="top" secondItem="oIc-Tz-u2c" secondAttribute="topMargin" id="Sss-dC-wbn"/>
                                                 <constraint firstItem="Y0i-yn-bVp" firstAttribute="top" secondItem="Nsg-dD-tNz" secondAttribute="bottom" constant="5" id="aNv-rP-H4c"/>
-                                                <constraint firstItem="Nsg-dD-tNz" firstAttribute="leading" secondItem="HJB-GY-8Xa" secondAttribute="trailing" constant="15" id="eJQ-7c-tN7"/>
+                                                <constraint firstItem="Nsg-dD-tNz" firstAttribute="leading" secondItem="HJB-GY-8Xa" secondAttribute="trailing" constant="8" id="eJQ-7c-tN7"/>
                                                 <constraint firstItem="3fF-B8-OGe" firstAttribute="top" secondItem="rOR-PG-IYE" secondAttribute="bottom" constant="8" id="kqc-JL-F4M"/>
                                                 <constraint firstItem="3fF-B8-OGe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Y0i-yn-bVp" secondAttribute="trailing" constant="20" id="lXF-O0-ce6"/>
                                                 <constraint firstItem="3fF-B8-OGe" firstAttribute="leading" secondItem="rOR-PG-IYE" secondAttribute="leading" id="oOD-SN-lTf"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Y0i-yn-bVp" secondAttribute="bottom" constant="2" id="tfK-u8-3NN"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="Y0i-yn-bVp" id="HR4-uY-aht"/>
+                                            <outlet property="percentChangeOneHourLabel" destination="3fF-B8-OGe" id="RdS-DY-sYQ"/>
+                                            <outlet property="priceUSDLabel" destination="rOR-PG-IYE" id="JtD-n9-aqv"/>
+                                            <outlet property="rankLabel" destination="HJB-GY-8Xa" id="kR5-ys-9R4"/>
+                                            <outlet property="symbolLabel" destination="Nsg-dD-tNz" id="Fos-Vi-mX6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
