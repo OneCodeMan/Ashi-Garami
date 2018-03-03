@@ -29,7 +29,7 @@
     symbols = [NSArray arrayWithObjects:@"BTC", @"NANO", @"ETH", @"XVG", nil];
     names = [NSArray arrayWithObjects:@"Bitcoin", @"BitShares", @"Bitcoin Cash", @"Basic Attention Token", nil];
     priceUSDs = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.663061], [NSNumber numberWithFloat:5.37048], [NSNumber numberWithFloat:0.0351729], [NSNumber numberWithFloat:11349.9], nil];
-    percentageChangesOneHour = [NSArray arrayWithObjects:@"-0.02", @"3.69", @"-2.16", @"9.94", nil];
+    percentageChangesOneHour = [NSArray arrayWithObjects:@"-0.02", @"+3.69", @"-2.16", @"+9.94", nil];
     
 }
 
@@ -51,8 +51,13 @@
     cell.rankLabel.text = [[ranks objectAtIndex:indexPath.row] stringValue];
     cell.symbolLabel.text = [symbols objectAtIndex:indexPath.row];
     cell.nameLabel.text = [names objectAtIndex:indexPath.row];
-    cell.priceUSDLabel.text = [NSString stringWithFormat:@"$%@", [[priceUSDs objectAtIndex:indexPath.row] stringValue]];
-    cell.percentChangeOneHourLabel.text = [percentageChangesOneHour objectAtIndex:indexPath.row];
+    
+    NSString *priceUSDLabelText = [[priceUSDs objectAtIndex:indexPath.row] stringValue];
+    cell.priceUSDLabel.text = [NSString stringWithFormat:@"$%@", priceUSDLabelText];
+    
+    NSString *percentChangeOneHourText = [percentageChangesOneHour objectAtIndex:indexPath.row];
+    cell.percentChangeOneHourLabel.text = [NSString stringWithFormat:@"%@%%", percentChangeOneHourText];
+    cell.percentChangeOneHourLabel.textColor = [percentChangeOneHourText hasPrefix:@"-"] ? [UIColor redColor] : [UIColor greenColor];
     
     return cell;
 }

@@ -15,6 +15,7 @@
 		162621F12048AC740042694E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 162621F02048AC740042694E /* main.m */; };
 		16FE2712204AB66900E2B406 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FE2711204AB66900E2B406 /* Coin.m */; };
 		16FE2715204ABE7400E2B406 /* CoinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FE2714204ABE7400E2B406 /* CoinCell.m */; };
+		16FE2718204AC75100E2B406 /* HelperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FE2717204AC75100E2B406 /* HelperClass.m */; };
 		4469E38E37CDF72359F88C97 /* libPods-ashi-garami.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 267613E06B3D486932B8AC9C /* libPods-ashi-garami.a */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,8 @@
 		16FE2711204AB66900E2B406 /* Coin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coin.m; sourceTree = "<group>"; };
 		16FE2713204ABE7400E2B406 /* CoinCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinCell.h; sourceTree = "<group>"; };
 		16FE2714204ABE7400E2B406 /* CoinCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinCell.m; sourceTree = "<group>"; };
+		16FE2716204AC75100E2B406 /* HelperClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelperClass.h; sourceTree = "<group>"; };
+		16FE2717204AC75100E2B406 /* HelperClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelperClass.m; sourceTree = "<group>"; };
 		267613E06B3D486932B8AC9C /* libPods-ashi-garami.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ashi-garami.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB1F92230D8F033AA17B1DB /* Pods-ashi-garami.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ashi-garami.release.xcconfig"; path = "Pods/Target Support Files/Pods-ashi-garami/Pods-ashi-garami.release.xcconfig"; sourceTree = "<group>"; };
 		DE977F11DA84A7F76F81EB16 /* Pods-ashi-garami.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ashi-garami.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ashi-garami/Pods-ashi-garami.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 				162621EC2048AC740042694E /* LaunchScreen.storyboard */,
 				162621EF2048AC740042694E /* Info.plist */,
 				162621F02048AC740042694E /* main.m */,
+				16FE2716204AC75100E2B406 /* HelperClass.h */,
+				16FE2717204AC75100E2B406 /* HelperClass.m */,
 			);
 			path = "ashi-garami";
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 				162621F12048AC740042694E /* main.m in Sources */,
 				16FE2712204AB66900E2B406 /* Coin.m in Sources */,
 				16FE2715204ABE7400E2B406 /* CoinCell.m in Sources */,
+				16FE2718204AC75100E2B406 /* HelperClass.m in Sources */,
 				162621E32048AC740042694E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +305,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -348,6 +355,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
