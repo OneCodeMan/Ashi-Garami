@@ -26,7 +26,7 @@
     [super viewDidLoad];
     
     ranks = [NSArray arrayWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:9],[NSNumber numberWithInt:27],[NSNumber numberWithInt:135], nil];
-    symbols = [NSArray arrayWithObjects:@"BTC", @"NANO", @"ETH", @"XVG", nil];
+    symbols = [NSArray arrayWithObjects:@"BTC", @"NANO", @"SMART", @"XVG", nil];
     names = [NSArray arrayWithObjects:@"Bitcoin", @"BitShares", @"Bitcoin Cash", @"Basic Attention Token", nil];
     priceUSDs = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.663061], [NSNumber numberWithFloat:5.37048], [NSNumber numberWithFloat:0.0351729], [NSNumber numberWithFloat:11349.9], nil];
     percentageChangesOneHour = [NSArray arrayWithObjects:@"-0.02", @"+3.69", @"-2.16", @"+9.94", nil];
@@ -34,7 +34,11 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return [ranks count];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"Sup");
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
