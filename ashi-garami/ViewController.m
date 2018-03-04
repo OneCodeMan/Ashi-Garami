@@ -8,8 +8,10 @@
 
 #import "ViewController.h"
 #import "CoinCell.h"
+#import "Coin.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -20,6 +22,9 @@
     NSArray *names;
     NSArray *priceUSDs;
     NSArray *percentageChangesOneHour;
+    NSMutableArray *coins;
+    NSMutableArray *filteredCoins;
+    Boolean inSearchMode;
 }
 
 - (void)viewDidLoad {
@@ -29,16 +34,29 @@
     symbols = [NSArray arrayWithObjects:@"BTC", @"NANO", @"SMART", @"XVG", nil];
     names = [NSArray arrayWithObjects:@"Bitcoin", @"BitShares", @"Bitcoin Cash", @"Basic Attention Token", nil];
     priceUSDs = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.663061], [NSNumber numberWithFloat:5.37048], [NSNumber numberWithFloat:0.0351729], [NSNumber numberWithFloat:11349.9], nil];
-    percentageChangesOneHour = [NSArray arrayWithObjects:@"-0.02", @"+3.69", @"-2.16", @"+9.94", nil];
+    percentageChangesOneHour = [NSArray arrayWithObjects:@"-0.02%", @"+3.69%", @"-2.16%", @"+9.94%", nil];
+    
+    coins = [[NSMutableArray alloc] initWithCapacity:4];
+    inSearchMode = NO;
+    
+    for (int i = 0; i <= [ranks count] - 1; i++) {
+        Coin *coin = [[Coin alloc] initWithName:[names objectAtIndex:i] symbol:[symbols objectAtIndex:i] rank:[ranks objectAtIndex:i] priceUSD:[priceUSDs objectAtIndex:i] percentChangeHour:[percentageChangesOneHour objectAtIndex:i]];
+        
+        [coins addObject:coin];
+    }
+    
+    _searchBar.delegate = self;
     
 }
+
+#pragma mark - UITableView
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [ranks count];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"Sup");
+    NSLog(@"%@", [[coins objectAtIndex:indexPath.row] name]);
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -52,18 +70,32 @@
         cell = [nib objectAtIndex:0];
     }
     
-    cell.rankLabel.text = [[ranks objectAtIndex:indexPath.row] stringValue];
-    cell.symbolLabel.text = [symbols objectAtIndex:indexPath.row];
-    cell.nameLabel.text = [names objectAtIndex:indexPath.row];
+    cell.rankLabel.text = [[[coins objectAtIndex:indexPath.row] rank] stringValue];
+    cell.symbolLabel.text = [[coins objectAtIndex:indexPath.row] symbol];
+    cell.nameLabel.text = [[coins objectAtIndex:indexPath.row] name];
     
-    NSString *priceUSDLabelText = [[priceUSDs objectAtIndex:indexPath.row] stringValue];
+    NSString *priceUSDLabelText = [[[coins objectAtIndex:indexPath.row] priceUSD] stringValue];
     cell.priceUSDLabel.text = [NSString stringWithFormat:@"$%@", priceUSDLabelText];
     
-    NSString *percentChangeOneHourText = [percentageChangesOneHour objectAtIndex:indexPath.row];
-    cell.percentChangeOneHourLabel.text = [NSString stringWithFormat:@"%@%%", percentChangeOneHourText];
+    NSString *percentChangeOneHourText = [[coins objectAtIndex:indexPath.row] percentChangeHour];
+    cell.percentChangeOneHourLabel.text = percentChangeOneHourText;
     cell.percentChangeOneHourLabel.textColor = [percentChangeOneHourText hasPrefix:@"-"] ? [UIColor redColor] : [UIColor greenColor];
     
     return cell;
+}
+
+#pragma mark - UISearchBar
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    if (searchText == nil || [searchText isEqualToString:@""]) {
+        inSearchMode = NO;
+    } else {
+        inSearchMode = YES;
+        
+        NSString *lowerCasedText = [searchText lowercaseString];
+        NSPredicate *filterBySearchPredicate = [NSPredicate predicateWithFormat:@"SELF contains %", lowerCasedText];
+        [filteredCoins filteredArrayUsingPredicate:filterBySearchPredicate];
+    }
 }
 
 @end

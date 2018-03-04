@@ -14,28 +14,14 @@
            symbol:(NSString *)symbol
              rank:(NSNumber *)rank
          priceUSD:(NSNumber *)priceUSD
-         priceBTC:(NSNumber *)priceBTC
-  availableSupply:(NSNumber *)availableSupply
-      totalSupply:(NSNumber *)totalSupply
-        maxSupply:(NSNumber *)maxSupply
-percentChangeHour:(NSString *)percentChangeHour
- percentChangeDay:(NSString *)percentChangeDay
-percentChangeWeek:(NSString *)percentChangeWeek
-      lastUpdated:(NSNumber *)lastUpdated {
+percentChangeHour:(NSString *)percentChangeHour {
     
     if (self = [super init]) {
-        name = name;
-        symbol = symbol;
-        rank = rank;
-        priceUSD = priceUSD;
-        priceBTC = priceBTC;
-        availableSupply = availableSupply;
-        totalSupply = totalSupply;
-        maxSupply = maxSupply;
-        percentChangeHour = percentChangeHour;
-        percentChangeDay = percentChangeDay;
-        percentChangeWeek = percentChangeWeek;
-        lastUpdated = lastUpdated;
+        _name = [name copy];
+        _symbol = [symbol copy];
+        _rank = [rank copy];
+        _priceUSD = [priceUSD copy];
+        _percentChangeHour = [percentChangeHour copy];
     }
     
     return self;

@@ -13,7 +13,7 @@
 +(NSString *)generatePercentageChangeText:(NSString *) percentageChangeText {
     
     if (![percentageChangeText hasPrefix:@"-"]) {
-        return [NSString stringWithFormat: @"+%@", percentageChangeText];
+        return [NSString stringWithFormat: @"+%%%@", percentageChangeText];
     }
     
     return percentageChangeText;
