@@ -12,6 +12,7 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -30,9 +31,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    ranks = [NSArray arrayWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:9],[NSNumber numberWithInt:27],[NSNumber numberWithInt:135], nil];
-    symbols = [NSArray arrayWithObjects:@"BTC", @"NANO", @"SMART", @"XVG", nil];
-    names = [NSArray arrayWithObjects:@"Bitcoin", @"BitShares", @"Bitcoin Cash", @"Basic Attention Token", nil];
+    ranks = [NSArray arrayWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:2],[NSNumber numberWithInt:3],[NSNumber numberWithInt:4], nil];
+    symbols = [NSArray arrayWithObjects:@"BTC", @"ETH", @"XRP", @"BCH", nil];
+    names = [NSArray arrayWithObjects:@"Bitcoin", @"Ethereum", @"Ripple", @"Bitcoin Cash", nil];
     priceUSDs = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.663061], [NSNumber numberWithFloat:5.37048], [NSNumber numberWithFloat:0.0351729], [NSNumber numberWithFloat:11349.9], nil];
     percentageChangesOneHour = [NSArray arrayWithObjects:@"-0.02%", @"+3.69%", @"-2.16%", @"+9.94%", nil];
     
@@ -45,6 +46,7 @@
         [coins addObject:coin];
     }
     
+    _tableView.delegate = self;
     _searchBar.delegate = self;
     
 }
@@ -70,6 +72,14 @@
         cell = [nib objectAtIndex:0];
     }
     
+    //Coin *currentCoin = [[Coin alloc] init];
+    
+//    if (inSearchMode) {
+//        currentCoin = [filteredCoins indexOfObject:indexPath.row];
+//    } else {
+//        currentCoin = [coins indexOfObject:indexPath.row];
+//    }
+    
     cell.rankLabel.text = [[[coins objectAtIndex:indexPath.row] rank] stringValue];
     cell.symbolLabel.text = [[coins objectAtIndex:indexPath.row] symbol];
     cell.nameLabel.text = [[coins objectAtIndex:indexPath.row] name];
@@ -89,12 +99,14 @@
     
     if (searchText == nil || [searchText isEqualToString:@""]) {
         inSearchMode = NO;
+       [_tableView reloadData];
     } else {
         inSearchMode = YES;
         
-        NSString *lowerCasedText = [searchText lowercaseString];
-        NSPredicate *filterBySearchPredicate = [NSPredicate predicateWithFormat:@"SELF contains %", lowerCasedText];
-        [filteredCoins filteredArrayUsingPredicate:filterBySearchPredicate];
+        //NSString *lowerCasedText = [searchText lowercaseString];
+        //NSPredicate *filterBySearchPredicate = [NSPredicate predicateWithFormat:@"SELF contains %", lowerCasedText];
+        //filteredCoins = [coins filteredArrayUsingPredicate:filterBySearchPredicate];
+        [_tableView reloadData];
     }
 }
 
